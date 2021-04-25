@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "/hello";
+//测试
+service hello {
+   rpc sayHello(HelloRequest) returns (HelloResponse) {}
+
+   rpc  LostOfReplies(HelloRequest) returns (stream HelloResponse) {}
+
+}
+
+message HelloRequest {
+  string name=1;
+}
+
+message HelloResponse {
+ string message =1;
+}
